@@ -1,0 +1,792 @@
+```html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcone Management & Car Srl | Vetrina Auto Selezionate</title>
+    <!-- Caricamento Tailwind CSS per lo stile moderno e responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Google Inter per la massima leggibilità -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icone Phosphor Icons per un look pulito e professionale -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#1e3a8a',
+                            900: '#0f172a',
+                            950: '#090d16'
+                        },
+                        brand: {
+                            teal: '#0d9488',
+                            tealDark: '#0f766e',
+                            whatsapp: '#25D366'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- ==================== HEADER CONCESSIONARIA ==================== -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                
+                <!-- Logo Tipografico e Indirizzo -->
+                <div class="flex items-start sm:items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-white flex items-center justify-center shrink-0 shadow-md">
+                        <i class="ph-fill ph-car-profile text-2xl text-teal-400"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg sm:text-xl font-extrabold text-navy-900 tracking-tight leading-tight">
+                            Falcone Management & Car Srl
+                        </h1>
+                        <p class="text-xs sm:text-sm text-slate-500 flex items-center gap-1 mt-0.5">
+                            <i class="ph-fill ph-map-pin text-brand-teal"></i>
+                            Via Roma, 97, 13030 Ghislarengo (VC)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pulsanti Azione Rapida Header -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <a href="https://wa.me/393920245804?text=Buongiorno%20Falcone%20Management%20%26%20Car%20Srl%2C%20vorrei%20informazioni%20sulle%20vostre%20auto%20in%20vetrina." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white text-sm font-semibold px-3.5 py-2.5 rounded-xl transition shadow-sm">
+                        <i class="ph-fill ph-whatsapp-logo text-lg"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="tel:+393920245804" 
+                       class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-navy-900 hover:bg-navy-800 text-white text-sm font-semibold px-3.5 py-2.5 rounded-xl transition shadow-sm">
+                        <i class="ph-fill ph-device-mobile text-base text-teal-400"></i>
+                        <span>392 024 5804</span>
+                    </a>
+                    <a href="tel:+390131022139" 
+                       class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-semibold px-3.5 py-2.5 rounded-xl transition border border-slate-200">
+                        <i class="ph-fill ph-phone-call text-base text-brand-teal"></i>
+                        <span>0131 022139</span>
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Falcone+Management+%26+Car+Srl+Via+Roma+97+Ghislarengo+VC" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-semibold px-3.5 py-2.5 rounded-xl transition border border-slate-200">
+                        <i class="ph-fill ph-navigation-arrow text-base text-brand-teal"></i>
+                        <span>Maps</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== SEZIONE HERO & FILTRI ==================== -->
+    <section class="bg-gradient-to-br from-navy-900 via-navy-950 to-slate-900 text-white py-8 sm:py-12 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="max-w-2xl">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/20 text-teal-300 border border-teal-500/30 mb-3">
+                    <i class="ph-fill ph-check-circle"></i> Usato Garantito e Selezionato
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-2">
+                    Le nostre auto selezionate
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Sfoglia il nostro parco auto aggiornato a Ghislarengo. Contattaci direttamente per fissare un appuntamento o richiedere una prova su strada.
+                </p>
+            </div>
+
+            <!-- Barra Filtri Funzionante -->
+            <div class="mt-6 bg-white p-3 sm:p-4 rounded-2xl shadow-lg text-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <!-- Ricerca Testuale -->
+                <div class="relative">
+                    <i class="ph ph-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                    <input type="text" id="searchInput" placeholder="Cerca marca o modello (es. Panda)..." 
+                           class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition">
+                </div>
+
+                <!-- Filtro Carburante -->
+                <div class="relative">
+                    <i class="ph ph-gas-pump absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                    <select id="fuelFilter" 
+                            class="w-full pl-10 pr-8 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition">
+                        <option value="all">Tutti i carburanti</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Benzina">Benzina</option>
+                        <option value="Ibrida">Ibrida / Elettrica</option>
+                        <option value="GPL/Metano">GPL / Metano</option>
+                    </select>
+                    <i class="ph ph-caret-down absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                </div>
+
+                <!-- Filtro Prezzo Massimo -->
+                <div class="relative">
+                    <i class="ph ph-currency-eur absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                    <select id="priceFilter" 
+                            class="w-full pl-10 pr-8 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition">
+                        <option value="all">Qualsiasi prezzo</option>
+                        <option value="5000">Fino a € 5.000</option>
+                        <option value="10000">Fino a € 10.000</option>
+                        <option value="15000">Fino a € 15.000</option>
+                        <option value="25000">Fino a € 25.000</option>
+                    </select>
+                    <i class="ph ph-caret-down absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GRIGLIA VEICOLI ==================== -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        
+        <!-- Contatore Risultati e Pillole Filtro Rapido -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+            <div class="flex flex-wrap items-center gap-2">
+                <button type="button" onclick="setQuickFuel('all')" data-quick-fuel="all"
+                        class="quick-fuel-btn bg-navy-900 text-white text-xs font-semibold px-3.5 py-2 rounded-full transition shadow-xs">
+                    Tutti
+                </button>
+                <button type="button" onclick="setQuickFuel('Diesel')" data-quick-fuel="Diesel"
+                        class="quick-fuel-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-semibold px-3.5 py-2 rounded-full transition">
+                    Diesel
+                </button>
+                <button type="button" onclick="setQuickFuel('Benzina')" data-quick-fuel="Benzina"
+                        class="quick-fuel-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-semibold px-3.5 py-2 rounded-full transition">
+                    Benzina
+                </button>
+            </div>
+
+            <div class="flex items-center justify-between sm:justify-end gap-4">
+                <p class="text-sm font-medium text-slate-600">
+                    <span id="carCount" class="font-bold text-navy-900">2</span> auto disponibili
+                </p>
+                <button id="resetFiltersBtn" class="hidden text-xs font-semibold text-brand-teal hover:text-brand-tealDark underline">
+                    Azzera filtri
+                </button>
+            </div>
+        </div>
+
+        <!-- Contenitore delle Card Auto -->
+        <div id="carsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Le schede vengono generate dinamicamente dal codice JavaScript qui sotto -->
+        </div>
+
+        <!-- Messaggio se nessun veicolo corrisponde ai filtri -->
+        <div id="emptyState" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 shadow-sm px-4">
+            <div class="w-16 h-16 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto mb-4">
+                <i class="ph ph-car text-3xl"></i>
+            </div>
+            <h3 class="text-lg font-bold text-navy-900 mb-1">Nessun veicolo trovato</h3>
+            <p class="text-sm text-slate-500 max-w-md mx-auto mb-4">
+                Prova a modificare i filtri di ricerca oppure contattaci direttamente per sapere quali auto sono in arrivo in sede.
+            </p>
+            <button onclick="resetFilters()" class="inline-flex items-center gap-2 bg-navy-900 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-navy-800 transition">
+                Mostra tutte le auto
+            </button>
+        </div>
+    </main>
+
+    <!-- ==================== FINESTRA MODALE (DETTAGLI AUTO) ==================== -->
+    <div id="carModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Sfondo scuro semitrasparente -->
+        <div class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+
+        <div class="flex min-h-full items-end sm:items-center justify-center p-0 sm:p-4">
+            <div class="relative w-full max-w-3xl bg-white rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden transform transition-all my-0 sm:my-8 max-h-[92vh] flex flex-col">
+                
+                <!-- Intestazione Modale Fissa -->
+                <div class="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-slate-200 bg-white sticky top-0 z-10">
+                    <div>
+                        <span id="modalBadge" class="text-xs font-bold uppercase tracking-wider text-brand-teal">Usato Selezionato</span>
+                        <h3 id="modalTitle" class="text-lg sm:text-xl font-extrabold text-navy-900 leading-tight mt-0.5">Titolo Auto</h3>
+                    </div>
+                    <button onclick="closeModal()" class="w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition shrink-0 ml-3" aria-label="Chiudi scheda">
+                        <i class="ph ph-x text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Corpo Scorrevole Modale -->
+                <div id="modalBody" class="p-5 sm:p-6 overflow-y-auto space-y-6">
+                    <!-- Contenuto iniettato via JS -->
+                </div>
+
+                <!-- Footer Fisso Modale con Azioni di Contatto -->
+                <div class="p-4 sm:px-6 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 sticky bottom-0 z-10">
+                    <div class="w-full sm:w-auto flex items-center justify-between sm:block">
+                        <span class="text-xs text-slate-500 block">Prezzo richiesto</span>
+                        <span id="modalPrice" class="text-2xl font-extrabold text-navy-900">€ 4.500</span>
+                    </div>
+                    <div class="w-full sm:w-auto flex flex-wrap sm:flex-nowrap gap-2">
+                        <a id="modalWhatsappBtn" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white text-sm font-semibold px-4 py-3 rounded-xl transition shadow-sm">
+                            <i class="ph-fill ph-whatsapp-logo text-lg"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="tel:+393920245804" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-navy-900 hover:bg-navy-800 text-white text-sm font-semibold px-4 py-3 rounded-xl transition shadow-sm">
+                            <i class="ph-fill ph-device-mobile text-lg text-teal-400"></i>
+                            <span>Chiama Cell.</span>
+                        </a>
+                        <a id="modalEmailBtn" href="#" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-brand-teal hover:bg-brand-tealDark text-white text-sm font-semibold px-4 py-3 rounded-xl transition shadow-sm">
+                            <i class="ph-fill ph-envelope-simple text-lg"></i>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== NOTIFICA TOAST (COPIA LINK) ==================== -->
+    <div id="toastNotification" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 bg-navy-900 text-white text-sm font-medium px-4 py-3 rounded-xl shadow-xl flex items-center gap-2.5 transition-all duration-300 opacity-0 pointer-events-none translate-y-4">
+        <i class="ph-fill ph-check-circle text-teal-400 text-lg"></i>
+        <span id="toastMessage">Link della vetrina copiato negli appunti!</span>
+    </div>
+
+    <!-- ==================== FOOTER AZIENDALE ==================== -->
+    <footer class="bg-navy-950 text-slate-300 py-10 px-4 sm:px-6 mt-auto border-t border-slate-800">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center gap-2.5 text-white font-bold text-lg mb-3">
+                    <i class="ph-fill ph-car-profile text-teal-400 text-2xl"></i>
+                    <span>Falcone Management & Car Srl</span>
+                </div>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                    Vendita auto usate selezionate e controllate. Trasparenza, cortesia e assistenza completa al cliente prima e dopo l'acquisto.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-3">Contatti & Sede</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li class="flex items-start gap-2.5">
+                        <i class="ph-fill ph-map-pin text-teal-400 text-base mt-0.5 shrink-0"></i>
+                        <span>Via Roma, 97 - 13030 Ghislarengo (VC)</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i class="ph-fill ph-device-mobile text-teal-400 text-base shrink-0"></i>
+                        <a href="tel:+393920245804" class="hover:text-white transition">Cell: +39 392 024 5804</a>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i class="ph-fill ph-whatsapp-logo text-[#25D366] text-base shrink-0"></i>
+                        <a href="https://wa.me/393920245804" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Scrivici su WhatsApp</a>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i class="ph-fill ph-phone text-teal-400 text-base shrink-0"></i>
+                        <a href="tel:+390131022139" class="hover:text-white transition">Tel: +39 0131 022139</a>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i class="ph-fill ph-envelope-simple text-teal-400 text-base shrink-0"></i>
+                        <a href="mailto:falconecarsrl@gmail.com" class="hover:text-white transition">falconecarsrl@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-3">Collegamenti Rapidi</h4>
+                <div class="flex flex-col gap-2.5">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Falcone+Management+%26+Car+Srl+Via+Roma+97+Ghislarengo+VC" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center gap-2 text-sm text-teal-400 hover:text-teal-300 font-medium">
+                        <i class="ph-bold ph-arrow-square-out"></i> Apri su Google Maps
+                    </a>
+                    <button onclick="copyPageLink('Falcone Management & Car Srl')" 
+                            class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white font-medium text-left">
+                        <i class="ph-bold ph-share-network"></i> Condividi questa vetrina
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-slate-800/80 text-center text-xs text-slate-500">
+            © <span id="currentYear"></span> Falcone Management & Car Srl - Tutti i diritti riservati.
+        </div>
+    </footer>
+
+    <!-- ==================== LOGICA JAVASCRIPT E DATI AUTO ==================== -->
+    <script>
+        /**
+         * ARCHIVIO VEICOLI (carsData)
+         * Per aggiungere una nuova auto in futuro, ti basta copiare tutto il blocco { ... },
+         * incollarlo subito dopo la virgola e modificare i testi e i numeri.
+         * Quando avrai le foto reali, sostituisci imageUrl: "" con il link della foto!
+         */
+        const carsData = [
+            {
+                id: "panda-2015-beige",
+                title: "Fiat Panda III 2012 1.3 Mjt 16V Lounge 75CV E5",
+                shortSubtitle: "City car pratica, consumi bassissimi e cinghia appena fatta",
+                price: 4500,
+                priceFormatted: "€ 4.500",
+                condition: "Usato",
+                registration: "03/2015",
+                mileage: "191.702 km",
+                fuel: "Diesel",
+                consumption: "3,9 l/100km (Comb.)",
+                power: "55 kW (75 CV)",
+                displacement: "1248 cm³ (4 cilindri)",
+                transmission: "Manuale (5 marce)",
+                doorsSeats: "5 porte / 5 sedili",
+                color: "Beige",
+                previousOwners: "1",
+                timingBelt: "09/2026",
+                maintenanceBadge: "Cinghia ok (09/2026)",
+                emissions: "Euro 5",
+                bodyColorHex: "#DFD3BE",
+                imageUrl: "", // Inserisci qui l'URL della foto reale quando pronta (es. "foto-panda.jpg")
+                placeholderText: "Foto in arrivo - Fiat Panda Beige",
+                description: "Questa Fiat Panda rappresenta una soluzione pratica e conveniente per chi cerca una city car maneggevole e affidabile. Registrata a marzo 2015, monta un motore diesel 1.3 MJT da 55 kW con consumi combinati di 3,9 l/100 km, perfetto per gli spostamenti quotidiani urbani. Storia senza incidenti, dotazione completa e ultima sostituzione della cinghia di distribuzione effettuata a settembre 2026.",
+                equipment: [
+                    "Climatizzatore",
+                    "Fari bi-Xeno",
+                    "Autoradio MP3 / CD / USB",
+                    "ESP & Controllo Trazione",
+                    "Start/Stop Automatico",
+                    "Antifurto & Immobilizzatore",
+                    "Fendinebbia",
+                    "Chiusura centralizzata telecomandata",
+                    "Alzacristalli elettrici",
+                    "Sistema controllo pressione pneumatici",
+                    "Airbag conducente, passeggero e testa",
+                    "Portapacchi",
+                    "Servosterzo",
+                    "Luce d'ambiente",
+                    "Ruotino di scorta"
+                ]
+            },
+            {
+                id: "seicento-2004-argento",
+                title: "Fiat Seicento II 2004 1.1 Actual",
+                shortSubtitle: "Soli 60.899 km • Distribuzione e tagliando completi",
+                price: 1700,
+                priceFormatted: "€ 1.700",
+                condition: "Usato",
+                registration: "06/2004",
+                mileage: "60.899 km",
+                fuel: "Benzina",
+                consumption: "6,0 l/100km (Comb.)",
+                power: "40 kW (54 CV)",
+                displacement: "1108 cm³ (4 cilindri)",
+                transmission: "Manuale (5 marce)",
+                doorsSeats: "3 porte / 4 sedili",
+                color: "Argento",
+                previousOwners: "1",
+                timingBelt: "10/2026 (Distribuzione + Tagliando completi)",
+                maintenanceBadge: "Distribuzione e Tagliando ok",
+                emissions: "Euro 3",
+                bodyColorHex: "#CBD5E1",
+                imageUrl: "", // Inserisci qui l'URL della foto reale quando pronta (es. "foto-seicento.jpg")
+                placeholderText: "Foto in arrivo - Fiat Seicento Argento",
+                description: "Auto storica italiana perfettamente conservata con soli 60.899 km, consumi contenuti (6,0 l/100 km combinato), distribuzione completa (sostituita a 10/2026) e tagliando completo appena eseguiti, pneumatici quattro stagioni inclusi. Unico precedente proprietario, ideale per l'utilizzo quotidiano in città.",
+                equipment: [
+                    "Pneumatici quattro stagioni",
+                    "Distribuzione completa (10/2026)",
+                    "Tagliando completo eseguito",
+                    "Ruota di scorta",
+                    "Airbag conducente"
+                ]
+            }
+        ];
+
+        // Imposta l'anno corrente nel footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Funzione che genera un'illustrazione vettoriale elegante se la foto reale non è ancora caricata
+        function getCarImageHtml(car, isModal = false) {
+            if (car.imageUrl && car.imageUrl.trim() !== "") {
+                return `<img src="${car.imageUrl}" alt="${car.title}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden w-full h-full bg-gradient-to-br from-slate-100 via-stone-100 to-slate-200 flex-col items-center justify-center p-4 text-center">
+                            <i class="ph-duotone ph-car-profile text-5xl text-slate-600 mb-2"></i>
+                            <span class="text-xs font-semibold text-slate-600">${car.placeholderText}</span>
+                        </div>`;
+            }
+
+            const heightClass = isModal ? "h-56 sm:h-64" : "h-48";
+            const isSilver = car.color.toLowerCase() === "argento";
+            const bgGradient = isSilver 
+                ? "from-slate-200 via-slate-100 to-zinc-200/90" 
+                : "from-stone-100 via-amber-50/80 to-slate-200/90";
+            const carFill = car.bodyColorHex || (isSilver ? "#CBD5E1" : "#DFD3BE");
+            const strokeColor = isSilver ? "#475569" : "#57534E";
+
+            // SVG specifico per city car compatta 3 porte (Seicento) vs 5 porte (Panda)
+            const carSvg = isSilver ? `
+                <svg class="w-32 h-20 drop-shadow-sm mb-2" viewBox="0 0 200 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="100" cy="96" rx="72" ry="6" fill="#94A3B8" fill-opacity="0.45"/>
+                    <!-- Carrozzeria City Car Compatta 3 porte Argento -->
+                    <path d="M32 68C32 56 40 49 52 46L70 28C76 22 84 20 94 20H126C139 20 149 27 154 38L162 52C170 55 175 61 175 70V78C175 82 171 85 167 85H33C29 85 25 82 25 78V73C25 70 28 68 32 68Z" fill="${carFill}" stroke="${strokeColor}" stroke-width="3"/>
+                    <!-- Riflesso metallizzato -->
+                    <path d="M56 52H154" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+                    <!-- Finestrini -->
+                    <path d="M74 31L59 46H97V26H85C80 26 77 28 74 31Z" fill="#334155"/>
+                    <path d="M104 26H124C132 26 138 30 142 37L147 46H104V26Z" fill="#334155"/>
+                    <!-- Faro -->
+                    <path d="M27 63H36C38 63 40 65 40 67V70H25V65C25 64 26 63 27 63Z" fill="#FEF9C3" stroke="${strokeColor}" stroke-width="2"/>
+                    <!-- Ruote -->
+                    <circle cx="58" cy="84" r="14" fill="#1E293B"/>
+                    <circle cx="58" cy="84" r="6.5" fill="#CBD5E1"/>
+                    <circle cx="142" cy="84" r="14" fill="#1E293B"/>
+                    <circle cx="142" cy="84" r="6.5" fill="#CBD5E1"/>
+                </svg>
+            ` : `
+                <svg class="w-32 h-20 drop-shadow-sm mb-2" viewBox="0 0 200 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="100" cy="96" rx="78" ry="6" fill="#CBD5E1"/>
+                    <path d="M28 66C28 54 36 47 48 45L66 25C72 19 80 16 90 16H132C144 16 153 23 158 34L168 50C176 53 182 60 182 69V78C182 82 178 85 174 85H26C22 85 18 82 18 78V72C18 69 22 66 28 66Z" fill="${carFill}" stroke="${strokeColor}" stroke-width="3"/>
+                    <path d="M71 29L56 45H96V24H82C77 24 74 26 71 29Z" fill="#334155"/>
+                    <path d="M104 24H130C138 24 144 28 148 35L153 45H104V24Z" fill="#334155"/>
+                    <path d="M22 62H32C34 62 36 64 36 66V69H20V64C20 63 21 62 22 62Z" fill="#FEF08A" stroke="${strokeColor}" stroke-width="2"/>
+                    <circle cx="54" cy="84" r="15" fill="#1E293B"/>
+                    <circle cx="54" cy="84" r="7" fill="#94A3B8"/>
+                    <circle cx="146" cy="84" r="15" fill="#1E293B"/>
+                    <circle cx="146" cy="84" r="7" fill="#94A3B8"/>
+                </svg>
+            `;
+
+            return `
+                <div class="w-full ${heightClass} bg-gradient-to-br ${bgGradient} flex flex-col items-center justify-center p-6 text-center relative overflow-hidden border-b border-slate-100">
+                    <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-white/40 blur-xl"></div>
+                    <div class="absolute -left-6 -top-6 w-28 h-28 rounded-full bg-teal-200/20 blur-xl"></div>
+                    ${carSvg}
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-xs text-slate-700 text-xs font-semibold shadow-xs border border-slate-200/80">
+                        <i class="ph ph-camera text-brand-teal"></i>
+                        ${car.placeholderText}
+                    </span>
+                </div>
+            `;
+        }
+
+        // Funzione per renderizzare la griglia delle auto
+        function renderCars(carsToRender) {
+            const grid = document.getElementById('carsGrid');
+            const emptyState = document.getElementById('emptyState');
+            const countSpan = document.getElementById('carCount');
+
+            countSpan.textContent = carsToRender.length;
+
+            if (carsToRender.length === 0) {
+                grid.innerHTML = '';
+                grid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.classList.remove('hidden');
+
+            grid.innerHTML = carsToRender.map(car => `
+                <article class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
+                    
+                    <!-- Area Immagine / Segnaposto con Badge -->
+                    <div class="relative">
+                        ${getCarImageHtml(car, false)}
+                        
+                        <!-- Badge in alto a sinistra -->
+                        <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                            <span class="bg-navy-900/90 backdrop-blur-xs text-white text-xs font-bold px-2.5 py-1 rounded-lg shadow-xs">
+                                ${car.condition}
+                            </span>
+                            <span class="bg-emerald-600/95 text-white text-xs font-semibold px-2.5 py-1 rounded-lg shadow-xs">
+                                ${car.emissions}
+                            </span>
+                            <span class="bg-white/95 text-slate-800 text-xs font-semibold px-2.5 py-1 rounded-lg shadow-xs border border-slate-200">
+                                ${car.previousOwners} Proprietario
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Contenuto Card -->
+                    <div class="p-5 flex-grow flex flex-col">
+                        <div class="mb-3">
+                            <h3 class="text-lg font-extrabold text-navy-900 group-hover:text-brand-teal transition leading-snug">
+                                ${car.title}
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">${car.shortSubtitle}</p>
+                        </div>
+
+                        <!-- Prezzo in Evidenza -->
+                        <div class="mb-4 pb-4 border-b border-slate-100 flex items-baseline justify-between gap-2">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Prezzo</span>
+                                <span class="text-2xl font-extrabold text-navy-900">${car.priceFormatted}</span>
+                            </div>
+                            <span class="text-xs font-medium text-teal-700 bg-teal-50 px-2.5 py-1 rounded-md border border-teal-100 text-right">
+                                ${car.maintenanceBadge}
+                            </span>
+                        </div>
+
+                        <!-- Griglia Dati Tecnici Principali -->
+                        <div class="grid grid-cols-2 gap-2.5 text-xs text-slate-600 mb-5">
+                            <div class="flex items-center gap-2 bg-slate-50 p-2 rounded-lg">
+                                <i class="ph-fill ph-calendar-blank text-brand-teal text-base shrink-0"></i>
+                                <div>
+                                    <span class="text-[10px] text-slate-400 block leading-none">Anno</span>
+                                    <span class="font-semibold text-slate-800">${car.registration}</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 bg-slate-50 p-2 rounded-lg">
+                                <i class="ph-fill ph-gauge text-brand-teal text-base shrink-0"></i>
+                                <div>
+                                    <span class="text-[10px] text-slate-400 block leading-none">Chilometri</span>
+                                    <span class="font-semibold text-slate-800">${car.mileage}</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 bg-slate-50 p-2 rounded-lg">
+                                <i class="ph-fill ph-gas-pump text-brand-teal text-base shrink-0"></i>
+                                <div>
+                                    <span class="text-[10px] text-slate-400 block leading-none">Carburante</span>
+                                    <span class="font-semibold text-slate-800">${car.fuel}</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 bg-slate-50 p-2 rounded-lg">
+                                <i class="ph-fill ph-engine text-brand-teal text-base shrink-0"></i>
+                                <div>
+                                    <span class="text-[10px] text-slate-400 block leading-none">Potenza</span>
+                                    <span class="font-semibold text-slate-800">${car.power}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pulsanti Azione Card -->
+                        <div class="mt-auto space-y-2">
+                            <button onclick="openModal('${car.id}')" 
+                                    class="w-full bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 shadow-sm">
+                                <i class="ph-bold ph-list-magnifying-glass text-teal-400 text-base"></i>
+                                <span>Vedi dettagli completi</span>
+                            </button>
+                            
+                            <div class="grid grid-cols-3 gap-2">
+                                <a href="https://wa.me/393920245804?text=${encodeURIComponent('Buongiorno, vorrei informazioni sulla ' + car.title + ' (' + car.priceFormatted + ')')}" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   class="bg-[#25D366]/15 hover:bg-[#25D366]/25 text-[#15803d] border border-[#25D366]/30 font-semibold text-xs py-2.5 px-2 rounded-xl transition flex items-center justify-center gap-1">
+                                    <i class="ph-fill ph-whatsapp-logo text-sm text-[#25D366]"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                                <a href="mailto:falconecarsrl@gmail.com?subject=${encodeURIComponent('Richiesta info: ' + car.title)}" 
+                                   class="bg-teal-50 hover:bg-teal-100 text-teal-800 border border-teal-200 font-semibold text-xs py-2.5 px-2 rounded-xl transition flex items-center justify-center gap-1">
+                                    <i class="ph-fill ph-envelope-simple text-sm"></i>
+                                    <span>Email</span>
+                                </a>
+                                <button onclick="copyPageLink('${car.title}')" 
+                                        class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs py-2.5 px-2 rounded-xl transition flex items-center justify-center gap-1">
+                                    <i class="ph-bold ph-share-network text-sm"></i>
+                                    <span>Condividi</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Gestione Modale Dettagli
+        function openModal(carId) {
+            const car = carsData.find(c => c.id === carId);
+            if (!car) return;
+
+            document.getElementById('modalBadge').textContent = `${car.condition} • ${car.emissions} • ${car.previousOwners} Proprietario`;
+            document.getElementById('modalTitle').textContent = car.title;
+            document.getElementById('modalPrice').textContent = car.priceFormatted;
+            document.getElementById('modalWhatsappBtn').href = `https://wa.me/393920245804?text=${encodeURIComponent('Buongiorno Falcone Management & Car Srl, sono interessato alla ' + car.title + ' a ' + car.priceFormatted)}`;
+            document.getElementById('modalEmailBtn').href = `mailto:falconecarsrl@gmail.com?subject=${encodeURIComponent('Richiesta informazioni: ' + car.title + ' (' + car.priceFormatted + ')')}`;
+
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <!-- Immagine / Illustrazione nella modale -->
+                <div class="rounded-xl overflow-hidden border border-slate-200">
+                    ${getCarImageHtml(car, true)}
+                </div>
+
+                <!-- Descrizione del veicolo -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-navy-900 mb-2 flex items-center gap-2">
+                        <i class="ph-fill ph-info text-brand-teal text-lg"></i> Descrizione del veicolo
+                    </h4>
+                    <p class="text-sm text-slate-600 leading-relaxed bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        ${car.description}
+                    </p>
+                </div>
+
+                <!-- Scheda Tecnica Completa -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-navy-900 mb-3 flex items-center gap-2">
+                        <i class="ph-fill ph-clipboard-text text-brand-teal text-lg"></i> Dati Tecnici e Manutenzione
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm bg-white border border-slate-200 rounded-xl p-4">
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span class="text-slate-500">Prima immatricolazione</span>
+                            <span class="font-semibold text-slate-900">${car.registration}</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span class="text-slate-500">Chilometraggio</span>
+                            <span class="font-semibold text-slate-900">${car.mileage}</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span class="text-slate-500">Carburante</span>
+                            <span class="font-semibold text-slate-900">${car.fuel}</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span class="text-slate-500">Consumo combinato</span>
+                            <span class="font-semibold text-slate-900">${car.consumption}</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span class="text-slate-500">Potenza</span>
+                            <span class="font-semibold text-slate-900">${car.power}</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span class="text-slate-500">Cilindrata</span>
+                            <span class="font-semibold text-slate-900">${car.displacement}</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span class="text-slate-500">Cambio</span>
+                            <span class="font-semibold text-slate-900">${car.transmission}</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span class="text-slate-500">Porte / Sedili</span>
+                            <span class="font-semibold text-slate-900">${car.doorsSeats}</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span class="text-slate-500">Colore esterno</span>
+                            <span class="font-semibold text-slate-900">${car.color}</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span class="text-slate-500">Precedenti proprietari</span>
+                            <span class="font-semibold text-slate-900">${car.previousOwners}</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b sm:border-b-0 border-slate-100">
+                            <span class="text-slate-500">Sostituzione cinghia</span>
+                            <span class="font-bold text-teal-700">${car.timingBelt}</span>
+                        </div>
+                        <div class="flex justify-between py-1.5">
+                            <span class="text-slate-500">Normativa emissioni</span>
+                            <span class="font-semibold text-slate-900">${car.emissions}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equipaggiamento e Optional -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-navy-900 mb-3 flex items-center gap-2">
+                        <i class="ph-fill ph-check-square-offset text-brand-teal text-lg"></i> Equipaggiamento e Optional
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        ${car.equipment.map(item => `
+                            <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-700 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100">
+                                <i class="ph-bold ph-check text-brand-teal shrink-0"></i>
+                                <span>${item}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('carModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Blocca lo scroll dello sfondo
+        }
+
+        function closeModal() {
+            document.getElementById('carModal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Chiusura modale con tasto ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Funzione Filtri
+        function syncQuickFuelButtons(fuelVal) {
+            document.querySelectorAll('.quick-fuel-btn').forEach(btn => {
+                const isMatch = btn.getAttribute('data-quick-fuel').toLowerCase() === fuelVal.toLowerCase();
+                if (isMatch) {
+                    btn.className = 'quick-fuel-btn bg-navy-900 text-white text-xs font-semibold px-3.5 py-2 rounded-full transition shadow-xs';
+                } else {
+                    btn.className = 'quick-fuel-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-semibold px-3.5 py-2 rounded-full transition';
+                }
+            });
+        }
+
+        function setQuickFuel(fuelVal) {
+            document.getElementById('fuelFilter').value = fuelVal;
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            const fuelVal = document.getElementById('fuelFilter').value;
+            const priceVal = document.getElementById('priceFilter').value;
+            const resetBtn = document.getElementById('resetFiltersBtn');
+
+            syncQuickFuelButtons(fuelVal);
+
+            const isFiltered = searchTerm !== '' || fuelVal !== 'all' || priceVal !== 'all';
+            if (isFiltered) {
+                resetBtn.classList.remove('hidden');
+            } else {
+                resetBtn.classList.add('hidden');
+            }
+
+            const filtered = carsData.filter(car => {
+                const matchesSearch = car.title.toLowerCase().includes(searchTerm) || 
+                                      car.description.toLowerCase().includes(searchTerm) ||
+                                      car.color.toLowerCase().includes(searchTerm);
+                const matchesFuel = fuelVal === 'all' || car.fuel.toLowerCase().includes(fuelVal.toLowerCase());
+                const matchesPrice = priceVal === 'all' || car.price <= parseInt(priceVal, 10);
+
+                return matchesSearch && matchesFuel && matchesPrice;
+            });
+
+            renderCars(filtered);
+        }
+
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('fuelFilter').value = 'all';
+            document.getElementById('priceFilter').value = 'all';
+            applyFilters();
+        }
+
+        document.getElementById('searchInput').addEventListener('input', applyFilters);
+        document.getElementById('fuelFilter').addEventListener('change', applyFilters);
+        document.getElementById('priceFilter').addEventListener('change', applyFilters);
+        document.getElementById('resetFiltersBtn').addEventListener('click', resetFilters);
+
+        // Funzione Condivisione / Copia Link con notifica elegante (senza usare alert)
+        function copyPageLink(carTitle) {
+            const urlToCopy = window.location.href;
+            const tempInput = document.createElement('input');
+            tempInput.value = urlToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                showToast(`Link copiato per: ${carTitle}`);
+            } catch (err) {
+                showToast('Copia il link dalla barra degli indirizzi del browser');
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            const toastMsg = document.getElementById('toastMessage');
+            toastMsg.textContent = message;
+            
+            toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+            }, 3000);
+        }
+
+        // Inizializzazione al caricamento
+        renderCars(carsData);
+    </script>
+</body>
+</html>
+```
